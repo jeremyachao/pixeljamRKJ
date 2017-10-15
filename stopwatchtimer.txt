@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class stopwatchtimer : MonoBehaviour {
+    public float sw;
+    public bool pause= false;
+    public GameObject timerText;
+	// Use this for initialization
+	void Start () {
+		
+	}
+
+
+	
+	// Update is called once per frame
+	void Update () {
+        if (!pause) {
+            sw += Time.deltaTime;
+        }
+        
+        timerText.GetComponent<Text>().text = "time: " + sw.ToString("0.00");
+
+	}
+}
